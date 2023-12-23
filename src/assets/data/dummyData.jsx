@@ -67,26 +67,26 @@ import suit6 from "../images/suit6.jpg";
 import suit7 from "../images/suit7.jpg";
 import suit8 from "../images/suit8.jpg";
 
+
+import rand_img from "../images/rand_img3.png";
 export const sliderData = [
   {
     id: "0",
-    img: shoe1,
-    text: "Summers SALE up to 50% OFF what are you wating for",
+    img: rand_img,
+    title: "Новинка! Автомобиль для взрывчатых веществ",
+    text: "Модель представляет собой модернизированный и рестайлинговый кузов УАЗ-450",
   },
   {
     id: "1",
-    img: shoe2,
-    text: "AUTUMN is coming, choose what suits you THE BEST",
+    img: rand_img,
+    title: "Поставка спецтехники для нефтегазовой области",
+    text: "Текст",
   },
   {
     id: "2",
-    img: shoe3,
-    text: "Make your feet as comfortable as walking on the beach",
-  },
-  {
-    id: "3",
-    img: shoe4,
-    text: "Choose between basketball and fashion or choose both",
+    img: rand_img,
+    title: "Новость...",
+    text: "Текст",
   },
 ];
 

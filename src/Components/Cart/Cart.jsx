@@ -28,7 +28,7 @@ const Cart = ({ openModal, setOpen }) => {
               unmount: { scale: 0.9, y: -100 },
             }}
           >
-            <DialogHeader>Shopping Bag</DialogHeader>
+            <DialogHeader>Заказ</DialogHeader>
             <DialogBody
               divider
               className="flex flex-col justify-center items-start"
@@ -118,14 +118,14 @@ const Cart = ({ openModal, setOpen }) => {
               unmount: { scale: 0.9, y: -100 },
             }}
           >
-            <DialogHeader>Shopping Bag</DialogHeader>
+            <DialogHeader>Заказ</DialogHeader>
             <DialogBody divider>
               <div>
                 <h1 className="text-black text-3xl font-inter font-bold tracking-normal leading-none py-4">
-                  Your bag is empty
+                  Пусто
                 </h1>
                 <p className="text-black text-base font-inter tracking-normal leading-none ">
-                  Add some products
+                  Добавьте технику
                 </p>
               </div>
             </DialogBody>

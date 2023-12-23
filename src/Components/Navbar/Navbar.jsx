@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.svg";
 import Cart from "../Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/slices/authSlice";
 import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
+import { BsCart2, BsTelephone } from "react-icons/bs";
 
 const Navbar = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -17,36 +19,56 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <div className="bg-black p-4 w-full flex justify-center items-center ">
-        <p className="text-white font-inter text-2xl font-bold  ">
-          Redux Toolkit Time
-        </p>
+    <div className="relative w-[1270px] h-[55px]">
+      <div className="absolute w-[311px] h-[22px] top-[17px] left-[300px]">
+        <Link
+          to="/"
+          className="w-[78px] top-0 left-0 [font-family:'Montserrat-SemiBold',Helvetica] font-semibold text-[18px] absolute text-[#1d2c53] tracking-[0] leading-[normal]"
+        >
+          Главная
+        </Link>
+        <Link
+          to="/constacts"
+          className="w-[92px] top-0 left-[213px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-[18px] absolute text-[#1d2c53] tracking-[0] leading-[normal]"
+        >
+          Контакты
+        </Link>
+        <Link
+          to="/aboutus"
+          className="w-[56px] top-0 left-[117px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-[18px] absolute text-[#1d2c53] tracking-[0] leading-[normal]"
+        >
+          О нас
+        </Link>
+        <Link
+          to="/products"
+          className="w-[56px] top-0 left-[340px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-[18px] absolute text-[#1d2c53] tracking-[0] leading-[normal]"
+        >
+          Каталог
+        </Link>
       </div>
-      <div className="flex justify-around items-center">
-        <div>
-          <img className="h-28 w-full" src={logo} alt="store"></img>
+
+      <Link
+        to="/"
+        className="absolute w-[200px] h-[50px] top-[3px] left-0 ml-10"
+      >
+        <img
+          className="absolute w-[50px] h-[50px] top-0 left-0 "
+          alt="Logo"
+          src={logo}
+        />
+        <div className="top-[9px] left-[59px] [font-family:'Montserrat-ExtraBold',Helvetica] font-extrabold text-[25px] whitespace-nowrap absolute text-[#1d2c53] tracking-[0] leading-[normal]">
+          СпецМаш
         </div>
-        <div className="flex flex-row items-center">
-          <div className="flex flex-row items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="#000"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-              />
-            </svg>
-            <p className=" font-inter text-base font-medium tracking-normal leading-none text-center mr-2">
-              Whish List
-            </p>
-          </div>
+      </Link>
+
+      <div className="absolute w-[200px] h-[25px] top-[15px] left-[880px]">
+        <p className="absolute top-0 left-[26px] [font-family:'Montserrat-Regular',Helvetica] font-normal text-[#1d2c53] text-[18px] tracking-[0] leading-[normal]">
+          +7 999 545 34 65
+        </p>
+        <BsTelephone />
+      </div>
+
+        <div className="absolute w-[200px] h-[25px] top-[15px] left-[1300px]">
           <div
             className="flex flex-row items-center cursor-pointer"
             onClick={handleOpen}
@@ -73,7 +95,7 @@ const Navbar = () => {
             )}
 
             <p className=" font-inter text-base font-medium tracking-normal leading-none text-center ">
-              Shopping bag
+              Заказ
             </p>
             <div>
               {open && <Cart openModal={open} setOpen={setOpen}></Cart>}
@@ -88,26 +110,9 @@ const Navbar = () => {
                 className="mr-2"
               ></Avatar>
             )}
-            <div onClick={() => dispatch(logout())}>
-              <Tooltip content="Sign Out" placement="bottom">
-                <p className="font-inter text-sm font-medium tracking-normal leading-none">
-                  Hi {name.charAt("0").toUpperCase() + name.slice(1)}
-                </p>
-              </Tooltip>
-            </div>
           </div>
         </div>
-      </div>
-      <div className="bg-black p-4 w-full flex items-center justify-center mx-auto">
-        <p className="text-white font-inter text-base font-medium ">50& OFF</p>
-        <p className="text-white font-inter text-base font-medium mx-96">
-          Free shipping and returns
-        </p>
-        <p className="text-white font-inter text-base font-medium ">
-          Diffrent payment methods
-        </p>
-      </div>
-    </>
+    </div>
   );
 };
 
